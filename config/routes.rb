@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     end
     resources :users do
       resources :posts
-      reources :likes
+      resources :likes
     end
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
