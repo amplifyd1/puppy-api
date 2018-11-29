@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
+  include Response
+  include ExceptionHandler
+  before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    @posts = Posts.all
+    @posts = Post.all
     json_response(@posts)
   end
 

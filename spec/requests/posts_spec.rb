@@ -51,7 +51,7 @@ RSpec.describe 'Posts API', type: :request do
 
   describe 'POST /posts' do
     # valid payload
-    let(:valid_attributes) { { photo: 'King George.jpg', created_by: '1' } }
+    let(:valid_attributes) { { photo: 'King_George.jpg', created_by: '1' } }
 
     context 'when the request is valid' do
       before { post '/posts', params: valid_attributes }
