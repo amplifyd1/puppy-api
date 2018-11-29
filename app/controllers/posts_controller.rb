@@ -2,12 +2,12 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts
     json_response(@posts)
   end
 
   def create
-    @post = Post.create!(post_params)
+    @post = current_user.posts.create!(post_params)
     json_response(@post, :created)
   end
 
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:text,:photo,:created_by)
+    params.permit(:text,:photo)
   end
 
   def set_post
