@@ -10,7 +10,6 @@ RSpec.describe 'Posts API', type: :request do
     before { get '/posts' }
 
     it 'returns posts' do
-      # Note `json` is a custom helper to parse JSON responses
       expect(json).not_to be_empty
       expect(json.size).to eq(10)
     end
@@ -50,7 +49,6 @@ RSpec.describe 'Posts API', type: :request do
 
 
   describe 'POST /posts' do
-    # valid payload
     let(:valid_attributes) { { photo: 'King_George.jpg', created_by: '1' } }
 
     context 'when the request is valid' do

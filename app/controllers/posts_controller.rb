@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  include Response
-  include ExceptionHandler
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
