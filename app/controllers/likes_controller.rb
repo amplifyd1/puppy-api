@@ -11,10 +11,8 @@ class LikesController < ApplicationController
   end
 
 
-#POST /posts/:post_id/likes/:id
+#POST users/:user_id/posts/:post_id/likes/:id
   def create
-    # current_user.@post.likes.create!(like_params)
-    # json_response(@post, :created)
     @like = Like.new(like_params)
     @like.user = current_user
     @like.post = @post
