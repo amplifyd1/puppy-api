@@ -1,11 +1,5 @@
 # PuppyAPI
-=======
 
-> - [testing artifacts](http://2.bp.blogspot.com)
-
-> - This is the PuppyAPI built with Rails 5.
-
-```Things you may want to cover:```
 * In order to use this API, Rails 5 will need to be installed, HTTPie was used to interact with the API.
 
 * To install rails follow this [link](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
