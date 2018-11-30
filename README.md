@@ -10,7 +10,7 @@
 ```~/puppy-api: rails db:create db:migrate```
 * Run Bundle Install for the Gems
 ```bundle install```
-*t hen start the rails server:
+* then start the rails server:
 ```~ /puppy-api: Rails s```
 
 * Open a new Terminal and now you can run commands with HTTPie to interact with the API. 
