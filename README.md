@@ -15,7 +15,7 @@
 
 * Open a new Terminal and now you can run commands with HTTPie to interact with the API. 
 
-##Creating an Account and Authorization Token
+## Creating an Account and Authorization Token
 * you will need to provide a :name, :email, and :password
 * run with your information:
 
@@ -23,25 +23,25 @@
 
 * This will provide you will an authentication token, you will need this for any requests to the API
 
-##Creating or Liking Posts
+## Creating or Liking Posts
 * Now that we are signed up we can create a post or like another post
 
-###Creating Posts
+### Creating Posts
 ```
 http POST :3000/Users/<Your USER ID>/Posts text="My Puppy is cuter than yours!" photo="king_george.png" \
 ->Authorization:"Your Auth Token"
 ```
 
-###Liking Posts, you will need the post_id and the user_id of the post creator
+### Liking Posts, you will need the post_id and the user_id of the post creator
 ```
 http POST :3000/Users/<Your USER ID>/Posts/<POST ID>/Likes \
 ->Authorization:"Your Auth Token"
 
 ```
 
-###Fetching User Profiles and Posts
+### Fetching User Profiles and Posts
 
-*Fetch User Profile details
+* Fetch User Profile details
 ```
 http :3000/users/<user id>
 ```
