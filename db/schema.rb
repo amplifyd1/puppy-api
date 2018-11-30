@@ -14,18 +14,20 @@ ActiveRecord::Schema.define(version: 2018_11_29_200535) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "post_id"
-    t.string "liked_by"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.text "text"
     t.text "photo"
-    t.string "created_by"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    @posts = current_user.posts
+    @posts = Post.all
     json_response(@posts)
   end
 
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    json_response(@post)
+    json_response([@post, "likes:", @post.likes])
   end
 
   def update
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:text,:photo)
+    params.permit(:text, :photo)
   end
 
   def set_post

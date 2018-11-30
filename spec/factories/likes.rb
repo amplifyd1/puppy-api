@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :like do
-    liked_by nil
+    user_id { Faker::Number.number(10) }
+    post_id { Faker::Number.number(10) }
   end
 end

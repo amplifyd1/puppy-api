@@ -6,5 +6,5 @@ RSpec.describe Post, type: :model do
   it { should have_many(:likes).dependent(:destroy) }
 #ensure columns are present before saving post
   it { should validate_presence_of(:photo) }
-  it { should validate_presence_of(:created_by) }
+  it { should validate_presence_of(:user) }
 end

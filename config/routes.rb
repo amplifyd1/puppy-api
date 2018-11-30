@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-    resources :posts do
-      resources :likes
-    end
+    # resources :posts do
+    #   resources :likes
+    # end
     resources :users do
-      resources :posts
-      resources :likes
+      resources :posts do
+        resources :likes
+      end
     end
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
