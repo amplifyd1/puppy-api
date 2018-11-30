@@ -3,7 +3,7 @@
 * In order to use this API, Rails 5 will need to be installed, HTTPie was used to interact with the API.
 
 * To install rails follow this [link](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
-* To install HTTPie, follow their guide [here] (https://httpie.org/doc)
+* To install HTTPie, follow their guide [here](https://httpie.org/doc)
 * To run the API you will need a local copy saved on your computer
 * You will need to run migrations for the applicaion
 * Navigate to the application in the terminal and run the following:
