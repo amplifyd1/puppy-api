@@ -7,12 +7,19 @@ class LikesController < ApplicationController
   end
 
   def show
-    json_response(@like)
+    json_response([@like])
   end
 
+
+#POST /posts/:post_id/likes/:id
   def create
-    @post.likes.create!(like_params)
-    json_response(@post, :created)
+    # current_user.@post.likes.create!(like_params)
+    # json_response(@post, :created)
+    @like = Like.new(like_params)
+    @like.user = current_user
+    @like.post = @post
+    @like.save
+    json_response(@like, :created)
   end
 
   def destroy
@@ -23,7 +30,7 @@ class LikesController < ApplicationController
   private
 
   def like_params
-    params.permit(:liked_by)
+    params.permit(:post_id, :user_id)
   end
 
   def set_post

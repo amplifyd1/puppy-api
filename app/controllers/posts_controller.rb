@@ -7,12 +7,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(post_params)
+    @post = current_user.posts.create!(post_params)
     json_response(@post, :created)
   end
 
   def show
-    json_response(@post)
+    json_response([@post, "likes:", @post.likes])
   end
 
   def update
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:text,:photo,:created_by)
+    params.permit(:text, :photo)
   end
 
   def set_post

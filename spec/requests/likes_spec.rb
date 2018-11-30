@@ -2,14 +2,17 @@ require 'rails_helper'
 
 RSpec.describe 'Likes API' do
   # Initialize the test data
-  let!(:post) { create(:post) }
-  let!(:likes) { create_list(:like, 20, post_id: post.id) }
+  let(:user) { create(:user) }
+  let!(:post) { create(:post, user_id: user.id) }
+  let!(:likes) { create_list(:like, 20, user_id: user.id, post_id: post.id) }
   let(:post_id) { post.id }
+  let(:user_id) { user.id }
   let(:id) { likes.first.id }
+  let(:headers) { valid_headers }
 
   # Test suite for GET Like
-  describe 'GET /posts/:post_id/likes' do
-    before { get "/posts/#{post_id}/likes" }
+  describe 'GET /users/:user_id/posts/:post_id/likes' do
+    before { get "/users/#{user_id}/posts/#{post_id}/likes", params: {}, headers: headers }
 
     context 'when posts exists' do
       it 'returns status code 200' do
@@ -36,8 +39,8 @@ RSpec.describe 'Likes API' do
 
 
   # Test for DELETE Like
-  describe 'DELETE /posts/:id' do
-    before { delete "/posts/#{post_id}/likes/#{id}" }
+  describe 'DELETE users/:user_id/posts/:post_id/likes/:id' do
+    before { delete "/users/#{user_id}/posts/#{post_id}/likes/#{id}", params: {}, headers: headers }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
