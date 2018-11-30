@@ -10,21 +10,21 @@
 ```~/puppy-api: rails db:create db:migrate```
 * Run Bundle Install for the Gems
 ```bundle install```
-*then start the rails server:
+*t hen start the rails server:
 ```~ /puppy-api: Rails s```
 
-*Open a new Terminal and now you can run commands with HTTPie to interact with the API. 
+* Open a new Terminal and now you can run commands with HTTPie to interact with the API. 
 
 ##Creating an Account and Authorization Token
-*you will need to provide a :name, :email, and :password
-*run with your information:
+* you will need to provide a :name, :email, and :password
+* run with your information:
 
 ```http :3000/signup name=<name> email=<email> password=<password> password_confirmation=<password>```
 
-*This will provide you will an authentication token, you will need this for any requests to the API
+* This will provide you will an authentication token, you will need this for any requests to the API
 
 ##Creating or Liking Posts
-*Now that we are signed up we can create a post or like another post
+* Now that we are signed up we can create a post or like another post
 
 ###Creating Posts
 ```
@@ -45,12 +45,12 @@ http POST :3000/Users/<Your USER ID>/Posts/<POST ID>/Likes \
 ```
 http :3000/users/<user id>
 ```
-*Fetch User Posts and likes
+* Fetch User Posts and likes
 ``` 
 http :3000/users/<user id>/posts
 ```
 
-*You may also delete post and likes by using 
+* You may also delete post and likes by using 
 ``` 
 http DELETE :3000/path
 ```
