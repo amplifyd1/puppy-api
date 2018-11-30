@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    json_response(["user:", @user, "posts:", @user.posts, "likes:", @user.likes])
+    json_response(@user)
   end
 
   private
